@@ -1,0 +1,14 @@
+   //Show the /game record
+    public void showRecordDialog(){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle("Highest Record");
+        builder.setMessage(record);
+        builder.setPositiveButton("Ok, I know", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        AlertDialog dialog=builder.create();
+        dialog.show();
+    }

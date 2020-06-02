@@ -1,0 +1,60 @@
+public void initData(){
+
+        ArrayList newList=new ArrayList<String>();
+        try {
+            InputStream instream = getResources().openRawResource(R.raw.sudoku);
+            if (instream != null)
+            {
+                InputStreamReader inputreader = new InputStreamReader(instream);
+                BufferedReader buffreader = new BufferedReader(inputreader);
+                String line;
+                //分行读取
+                while (( line = buffreader.readLine()) != null) {
+                    newList.add(line+"\n");
+                }
+                instream.close();
+            }
+        }
+        catch (java.io.FileNotFoundException e)
+        {
+            Log.d("TestFile", "The File doesn't not exist.");
+        }
+        catch (IOException e)
+        {
+            Log.d("TestFile", e.getMessage());
+        }
+
+        for(int i = 0; i < newList.size(); i++){
+            String temp=newList.get(i).toString();
+            int[][] questions= new int[9][9];
+            int[][] answers= new int[9][9];
+            int tempRow=0;
+            int tempCol=0;
+
+            for(int j=0; j<temp.length();j++)
+            {
+                if(j<81){
+                    tempRow=j/9;
+                    tempCol=j%9;
+                    questions[tempRow][tempCol]=Character.getNumericValue(temp.charAt(j));
+                }
+                if(j==81);// ','
+                if(j>81&&j<163){
+                    tempRow=(j-82)/9;
+                    tempCol=(j-82)%9;
+                    answers[tempRow][tempCol]=Character.getNumericValue(temp.charAt(j));
+                }
+            }
+            quizzes.add(questions);
+            solutions.add(answers);
+
+            if(i<30){
+                for(int x=0; x<9; x++){
+                    for(int y=0; y<9; y++){
+                        partQuizzes[i][x][y]=questions[x][y];
+                        partSolutions[i][x][y]=answers[x][y];
+                    }
+                }
+            }
+        }
+    }

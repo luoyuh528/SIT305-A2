@@ -1,0 +1,11 @@
+April 10th, Create Github account.
+
+May 25th, Create Github Repositories.
+        26th, Upload work plan, and the first part of our code
+        27th, Upload pictures for icons and background.
+        28th, Upload changed pictures for icons and background.
+        29th, create a matrix, main activity
+        30th, Create CS read inidata
+        31th, Create Highest record dialog
+June 1st,   game helper
+         2nd, compile all the files, and upload the zip file.

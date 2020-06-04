@@ -1,0 +1,7 @@
+Yuhao Luo, 219080862
+Junyang Zhu,219083413
+
+Overview:We have developed a Sudoku game that allows 
+people to kill the time and relax by using Java.
+
+Github : https://github.com/luoyuh528/SIT305-A2
